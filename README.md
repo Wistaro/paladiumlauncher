@@ -32,58 +32,6 @@ Toutes les nouveautés concernant les builds du launcher se font ici!
 | macOS | `non disponible (en cours)` |
 | Linux x64 | `non disponible (en cours)` |
 
-## Console
-
-Pour ouvrir la console, utilisez le raccourci clavier suivant :
-
-```console
-ctrl + shift + i
-```
-
-## Développement
-
-**Configuration requise**
-
-* [Node.js][nodejs] v10.x.x
-
----
-
-**Cloner et installer les dépendances**
-
-```console
-> git clone git@ssh.palagitium.dev:Master/launcher.git
-> cd Launcher
-> npm install
-```
-
----
-
-**Lancer l'application**
-
-```console
-> npm start
-```
-
----
-
-**Installateurs**
-
-Build pour sa plateforme :
-
-```console
-> npm run dist
-```
-
-Build pour une plateforme spécifique :
-
-| Platform    | Command              |
-| ----------- | -------------------- |
-| Windows x64 | `npm run dist:win`   |
-| macOS       | `non disponible (en cours)`   |
-| Linux x64   | `non disponible (en cours)` |
-
-Builds for macOS may not work on Windows/Linux and vice-versa.
-
 ---
 Copyright 2019 Paladium. All rights reserved.
 
