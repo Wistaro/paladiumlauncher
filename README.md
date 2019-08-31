@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/build-dev-red.svg?style=for-the-badge" alt="build">
-  <img src="https://img.shields.io/badge/version-v0.0.01--d4-red.svg?style=for-the-badge" alt="version"> 
+  <img src="https://img.shields.io/badge/version-v0.0.01--d5-red.svg?style=for-the-badge" alt="version"> 
   <img src="https://img.shields.io/badge/dist-windows-blue.svg?style=for-the-badge"  height="28px" alt="distribution">
 </p>
 
@@ -19,10 +19,10 @@ Toutes les nouveautés concernant les builds du launcher se font ici!
 ## Télécharger
 
 #### Dernière Release
-![](https://img.shields.io/badge/release-v0.0.01--d4-red.svg?style=for-the-badge)
+![](https://img.shields.io/badge/release-v0.0.01--d5-red.svg?style=for-the-badge)
 
 #### Dernière Pre-Release
-![](https://img.shields.io/badge/release-v0.0.01--d4-red.svg?style=for-the-badge)
+![](https://img.shields.io/badge/release-v0.0.01--d5-red.svg?style=for-the-badge)
 
 **Plateformes supportées**
 
