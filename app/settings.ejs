@@ -1,0 +1,59 @@
+<div id="settings-view" style="display: none;">
+    <div class="settings-panel-left">
+        <div class="settings-container-nav">
+            <div class="nav-items-container">
+                <div class="group">
+                    <p class="title">Paramètres utilisateur</p>
+                    <button class="item settingsTab" id="settings-user-compte-panel-button" rSc="settings-user-compte-panel">Mon compte</button>
+                    <hr>
+                </div>
+                <div class="group">
+                    <p class="title">Paramètres Java</p>
+                    <button class="item settingsTab" id="settings-java-memory-panel-button" rSc="settings-java-memory-panel">Mémoire Ram</button>
+                    <button class="item settingsTab" id="settings-java-executable-panel-button" rSc="settings-java-executable-panel">Java éxécutable</button>
+                    <hr>
+                </div>
+                <div class="group">
+                    <p class="title">Paramètres Launcher</p>
+                    <button class="item settingsTab" id="settings-launcher-distribution-panel-button" rSc="settings-launcher-distribution-panel">Distribution</button>
+                    <hr>
+                </div>
+                <div class="group">
+                    <button class="item settingsTab" id="settings-cgv-panel-button" rSc="settings-cgv-panel">Conditions générales de vente</button>
+                    <button class="item settingsTab" id="settings-pdc-panel-button" rSc="settings-pdc-panel">Politique de confidentialité</button>
+                    <hr>
+                </div>
+                <div class="group">
+                    <button class="item save" id="settings-save-button" style="margin-top: 40px;">Sauvegarder</button>
+                    <hr>
+                </div>
+                <div class="group" style="margin-top: 5px; margin-left: 5px;">
+                    <a href="https://discord.gg/paladium" class="item-social"><i class="fab fa-discord"></i></a>
+                    <a href="https://twitter.com/paladiumpvp?lang=fr" class="item-social"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/paladium.pvp/" class="item-social"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC3uSViy-aWBAk6b36Xjnm0g" class="item-social"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="settings-panel-right">
+        <!-- User : Compte -->
+        <% include settings/user-compte.ejs %>
+
+        <!-- Java : Memory -->
+        <% include settings/java-memory.ejs %>
+
+        <!-- Java : Executable -->
+        <% include settings/java-executable.ejs %>
+
+        <!-- Launcher : Distribution -->
+        <% include settings/launcher-distribution.ejs %>
+
+        <!-- Cgv -->
+        <% include settings/cgv.ejs %>
+        
+        <!-- Pdc -->
+        <% include settings/pdc.ejs %>
+    </div>
+    <script src="./assets/js/scripts/settings.js"></script>
+</div>

@@ -1,0 +1,51 @@
+<div class="settings-container" id="settings-java-memory-panel" style="display: none;">
+    <h1 id="title">Mémoire Ram</h1>
+
+    <div class="info-container">
+        <p class="title">Information</p>
+        <p class="desc">Cette page permet de configurer la quantité de mémoire RAM que votre système d'exploitation va allouer à Paladium.
+            <br><br>Plus cette quantité est importante, plus votre jeu sera stable et aura de bonnes performances. 
+            <br>Toutefois, même si vous en avez beaucoup de disponible sur votre ordinateur, il est inutile d'allouer une très grande quantité de RAM à Paladium.
+            <br><br>- RAM Maximum: Indique la quantité totale de RAM à allouer à Paladium. Il est recommander de ne pas dépasser 50% de la quantité totale de RAM présente sur votre PC. Si votre ordinateur a plus de 8Go de RAM, nous recommandons d'allouer 3Go. Si votre ordinateur a 4Go ou moins, n'allouez pas plus de 2Go.
+            <br><br>- RAM Minimum: Indique la quantité minimale de RAM allouée au démarrage de Paladium. Il n'est pas recommandé de mettre plus de 2Go pour cette valeur. La valeur typique est de 1Go.
+        </p>
+    </div>
+
+    <div class="warning-banner-settings" style="margin-bottom: 20px;"><i class="fas fa-exclamation-triangle"></i> Attention, allouer trop de mémoire à Paladium est parfois dangereux: si votre système d'exploitation n'a plus assez de RAM pour fonctionner (si vous avez alloué toute votre RAM à Paladium par exemple), votre ordinateur risque de rencontrer de sérieux problèmes de stabilité.</div>
+
+    <div class="settings-flex-double-container">
+        <div class="left-container">
+            <p class="group-name">RAM Maximum</p>
+            <div class="settings-memory-range-container">
+                <div class="range-slider" id="settings-max-ram-range" min="0.5" max="4" value="1" step="0.5">
+                    <div class="range-slider-bar"></div>
+                    <div class="range-slider-track"></div>
+                </div>
+                <p class="group-value" id="settings-max-ram-label">0G</p>
+            </div>
+
+            <p class="group-name">RAM Minimum</p>
+            <div class="settings-memory-range-container">
+                <div class="range-slider" id="settings-min-ram-range" min="0.5" max="4" value="1" step="0.5">
+                    <div class="range-slider-bar"></div>
+                    <div class="range-slider-track"></div>
+                </div>
+                <p class="group-value" id="settings-min-ram-label">0G</p>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="settings-memory-info">
+                <div class="settings-memory-info-container">
+                    <p class="group-name" style="margin-top: 1px;">RAM Total sur votre ordinateur :</p>
+                    <p class="group-value" id="settings-memory-total-label" style="margin-left: 5px;">0G</p>
+                </div>
+                <div class="settings-memory-info-container">
+                    <p class="group-name" style="margin-top: 1px;">RAM disponible :</p>
+                    <p class="group-value" id="settings-memory-avail-label" style="margin-left: 5px;">0G</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/scripts/settings/java-memory.js"></script>
+</div>

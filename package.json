@@ -1,0 +1,105 @@
+{
+  "name": "paladiumlauncher",
+  "version": "0.0.1-beta.2",
+  "productName": "Paladium Launcher",
+  "description": "Paladium Launcher",
+  "author": "Paladium",
+  "license": "UNLICENSED",
+  "homepage": "https://paladium-pvp.fr/",
+  "bugs": {
+    "url": "https://paladium-pvp.fr/index.php?forums/probl%C3%A8me-de-launcher.10/"
+  },
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "cilinux": "electron-builder --linux --win",
+    "cidarwin": "electron-builder --mac",
+    "dist": "cross-env ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true electron-builder",
+    "dist:win": "npm run dist -- --win --x64",
+    "dist:mac": "npm run dist -- --mac",
+    "dist:linux": "npm run dist -- --linux --x64",
+    "lint": "eslint --config .eslintrc.json ."
+  },
+  "engines": {
+    "node": "10.x.x"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.13",
+    "async": "^3.0.1-0",
+    "discord-rpc": "github:discordjs/RPC",
+    "ejs": "^2.6.1",
+    "ejs-electron": "^2.0.3",
+    "electron-updater": "^4.0.6",
+    "fs-extra": "^7.0.1",
+    "github-syntax-dark": "^0.5.0",
+    "jquery": "^3.4.0",
+    "request": "^2.88.0",
+    "semver": "^6.0.0",
+    "tar-fs": "^2.0.0",
+    "winreg": "^1.2.4"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.40.2",
+    "eslint": "^5.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chaika9/paladiumlauncher.git"
+  },
+  "build": {
+    "appId": "paladiumlauncher",
+    "productName": "Paladium Launcher",
+    "artifactName": "${productName}.${ext}",
+    "copyright": "Copyright © 2019 Paladium",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": "x64"
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.games",
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "maintainer": "Chaika9",
+      "vendor": "Paladium",
+      "synopsis": "Paladium Launcher",
+      "description": "Paladium Launcher",
+      "category": "Game"
+    },
+    "deb": {
+      "compression": "xz",
+      "packageCategory": "Games",
+      "priority": "optional"
+    },
+    "compression": "maximum",
+    "files": [
+      "!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json}"
+    ],
+    "extraResources": [],
+    "asar": true
+  }
+}

@@ -1,0 +1,23 @@
+<div class="settings-container" id="settings-java-executable-panel" style="display: none;">
+    <h1 id="title">Java éxécutable</h1>
+
+    <div class="info-container">
+        <p class="title">Information</p>
+        <p class="desc">Cette page permet d'indiquer à Paladium l'emplacement de l'exécutable Java.
+            <% if(process.platform === 'win32') { %>
+                <br><br>Celui-ci se trouve très souvent à cet emplacement:
+                <br>C:\Program Files\Java\jre1.8.0_XXX\bin (avec XXX le numéro du build de la version, prenez le plus grand que vous avez.)
+                <br><br>Deux versions de l’exécutable sont disponible dans ce répertoire: java.exe ou javaw.exe. Leur fonctionnement est quasi-identique. java.exe présente l'avantage d'écrire les logs pendant l’exécution du jeu, tandis que javaw.exe se contente de lancer le jeu.
+                <br>Par défaut, utilisez javaw.exe, sauf si vous avez besoin de faire du débogage.
+            <% } %>
+        </p>
+    </div>
+
+    <div class="settings-flex-container">
+        <input class="textfield" type="text" id="settings-java-executable-textfield" disabled/>
+        <input class="button-select" id="settings-java-executable-select" type="file" <%= process.platform === 'win32' ? 'accept=.exe' : '' %>>
+        <label class="button button-settings" for="settings-java-executable-select" style="margin-top: 10px;">Changer</label>
+    </div>
+
+    <script src="./assets/js/scripts/settings/java-executable.js"></script>
+</div>

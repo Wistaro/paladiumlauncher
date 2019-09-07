@@ -1,0 +1,38 @@
+<div id="launcher-view" style="display: none;">
+    <div class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="nav-left">
+                    <a class="link active" id="launcher-nav-home-button">Accueil</a>
+                    <a class="link" id="launcher-nav-community-button">Communauté</a>
+                    <a class="link" id="launcher-nav-wiki-button">Wiki</a>
+                    <a class="link" id="launcher-nav-support-button">Support</a>
+
+                    <a class="link" id="launcher-nav-betalauncher-button"><i class="fas fa-star"></i> Beta</a>
+                </div>
+                
+                <img src="assets/images/logo.png" class="logo">
+                <p id="subtitle"></p>
+
+                <div class="nav-right">
+                    <a class="button-gradient" id="launcher-nav-store-button" style="float: right"><i class="fas fa-shopping-cart" style="margin-right: 10px;"></i> Boutique</a>
+                    <a class="button-gradient" id="launcher-nav-workshop-button" style="float: right"><i class="fas fa-cubes" style="margin-right: 10px;"></i> Workshop</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Home Panel -->
+    <% include launcher/home.ejs %>
+    
+    <!-- Store Panel -->
+    <% include launcher/store.ejs %>
+
+    <!-- Beta Launcher Panel -->
+    <% include launcher/betalauncher.ejs %>
+
+    <!-- Maintenance Panel -->
+    <% include launcher/maintenance.ejs %>
+
+    <script src="./assets/js/scripts/launcher.js"></script>
+</div>

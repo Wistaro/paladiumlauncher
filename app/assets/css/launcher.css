@@ -1,0 +1,816 @@
+/**
+* Header
+**/
+/* #region */
+
+#launcher-view .header {
+    position: fixed;
+    background: linear-gradient(0deg, rgba(37, 37, 37, 0), rgba(37, 37, 37, 0.9));
+
+    width: 100%;
+    height: 150px;
+
+    justify-content: center;
+
+    z-index: 100;
+}
+
+#launcher-view .header .nav {
+    display: inline-block;
+    text-align: center;
+    
+    height: 100%;
+    width: 100%;
+}
+
+#launcher-view .header .nav .nav-left {
+    margin: 30px 0 0;
+    float: left;
+}
+
+/** Logo **/
+/* #region */
+
+#launcher-view .header .nav .logo {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+    width: 300px;
+}
+
+#launcher-view .header .nav #subtitle {
+    position: absolute;
+
+    left: 50%;
+    top: 80px;
+
+    font-family: "Minecraftia";
+    text-align: center;
+    font-size: 20px;
+    color: #FFFF00;
+
+    text-shadow: 1px 1px 0px #000;
+
+    animation: splash-subtitle 0.25s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes splash-subtitle {
+    0% {
+        transform: scale(0.875) rotate(-20deg);
+    }
+    100% {
+        transform: scale(1) rotate(-20deg);
+    }  
+}
+
+/* #endregion */
+
+.header .nav .nav-right {
+    margin: 30px 0 0;
+    float: right;
+}
+
+.header .nav .link {
+    display: block;
+    
+    font-family: 'Roboto Light';
+    font-size: 13px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    padding: 14px 14px;
+
+    float: left;
+}
+.header .nav .link:after {
+	content: '';
+    display: block;
+    margin-top: 5px;
+    width: 0;
+    height: 1px;
+    background: #ff8400;
+}
+.header .nav .link:hover:after {
+    width: 100%;
+}
+.header .nav .link.active:after {
+    width: 100%;
+}
+
+.header .nav .button-gradient {
+    padding: 14px 34px;
+    margin-left: 10px;
+
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.header .nav .button-gradient#launcher-nav-workshop-button {
+    background: linear-gradient(#646464, #777);
+    border: 1px solid #777;
+}
+.header .nav .button-gradient#launcher-nav-workshop-button:hover {
+    background: #777;
+    border: 1px solid #777;
+}
+
+.header-margin {
+    position: relative;
+    height: 150px;
+}
+
+/** Banner **/
+/* #region */
+
+/** Header Banner **/
+/* #region */
+
+.header-banner {
+    position: relative;
+    
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 400px;
+}
+
+.header-banner-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -100px;
+
+    width: 100%;
+}
+
+.header-banner-content .banner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+    
+    width: 100%;
+}
+
+/* #endregion */
+
+/** Banner **/
+/* #region */
+
+.banner-body {
+    display: table;
+    table-layout: fixed;
+
+    width: 100%;
+}
+
+.banner-body-content {
+    display: table-cell;
+    vertical-align: top;
+
+    padding-right: 20px;
+}
+
+.banner-body-sidebar {
+    display: table-cell;
+    vertical-align: top;
+
+    width: 300px;
+}
+
+/** Block **/
+/* #region */
+
+.block-container {
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.075);
+
+    padding: 18px 24px;
+
+    font-size: 13px;
+    background: #2b2b2b;
+
+    margin-bottom: 20px;
+}
+
+.block-container .block-title, .block-container .block-title a {
+    font-size: 16px;
+    color: #ffffff;
+}
+.block-container .block-title {
+    cursor: default;
+    position: relative;
+    margin-bottom: 28px;
+}
+.block-container .block-title:after, .block-container .block-title a:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+    width: 50px;
+    height: 2px;
+    background: #ffffff;
+}
+
+.block-container.block-gradient {
+    background: linear-gradient(to right, #ff8326, #ffa304);
+}
+
+.block-container.block-gradient p {
+    color: #ffffff;
+}
+
+.block-container.block-link {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+.block-container.block-link a {
+    display: inline-block;
+}
+.block-container.block-link a:hover {
+    color: #ff8400;
+}
+.block-container.block-link .icon {
+    float: right;
+}
+.block-container.block-link:focus, .block-container.block-link:hover {
+    opacity: 0.8;
+    transform: scale(0.985);
+}
+
+/* #endregion */
+
+/* #endregion */
+
+/* #endregion */
+
+/**
+* Home panel
+**/
+/* #region */
+
+/** Header Banner **/
+/* #region */
+
+#launcher-home-panel .header-banner-content .banner-header .box-social .btn-social {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+
+    width: 32px;
+    height: 32px;
+    margin-right: 3px;
+
+    padding: 7 0 0 0;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    
+    border-radius: 4px;
+}
+#launcher-home-panel .header-banner-content .banner-header .box-social .btn-social:hover {
+    background: #3b3b3b;
+}
+
+#launcher-home-panel .header-banner-content .banner-header .box-user {
+    display: inline-flex;
+
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+
+    padding: 7px;
+
+    width: 42px;
+    height: 42px;
+}
+#launcher-home-panel .header-banner-content .banner-header .box-user .btn-user {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+}
+#launcher-home-panel .header-banner-content .banner-header .box-user .btn-user.avatar {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+}
+#launcher-home-panel .header-banner-content .banner-header .box-user .btn-user img {
+    display: block;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    
+    border-radius: inherit;
+}
+
+/* #endregion */
+
+#launcher-home-panel .block-container.announcement {
+    padding: 0;
+}
+
+#launcher-home-panel .block-container.announcement .announcement-header {
+    cursor: default;
+    position: relative;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#launcher-home-panel .block-container.announcement .announcement-header .announcement-calendar {
+    width: 70px;
+    height: 100%;
+    padding-right: 1px;
+    padding: 16px 0 13px 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ccc;
+    font-weight: 900;
+    text-align: center;
+}
+#launcher-home-panel .block-container.announcement .announcement-header .announcement-calendar .day {
+    font-size: 28px;
+    margin-bottom: -10px;
+    display: block;
+}
+#launcher-home-panel .block-container.announcement .announcement-header .announcement-calendar .month {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#launcher-home-panel .block-container.announcement .announcement-header .announcement-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 3px;
+    display: table;
+}
+
+#launcher-home-panel .block-container.announcement .announcement-header .announcement-avatar {
+    position: absolute;
+    top: 19px;
+    left: 19px;
+
+    width: 48px;
+    height: 48px;
+    font-size: 29px;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#launcher-home-panel .block-container.announcement .announcement-header .announcement-avatar img {
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    display: block;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+/** Block Servers Status **/
+/* #region */
+
+#launcher-home-panel .block-container.servers-status .block-title em {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    min-width: 42px;
+    text-align: center;
+    padding: 0 7px 0 9px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    font-style: normal;
+    font-size: 12px;
+    top: -5px;
+    right: -11px;
+    float: right;
+}
+
+/* Online */
+#launcher-home-panel .block-container.servers-status .block-title em .online {
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+
+    background: #48B774;
+    box-shadow: 0 0 0 0 rgba(72, 183, 116, 0.5);
+
+    animation: online-em-pulse 2s infinite;
+}
+@keyframes online-em-pulse {
+    70% {
+        box-shadow: 0 0 0 8px rgba(72, 183, 116, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 183, 116, 0);
+    }
+}
+
+/* Offline */
+#launcher-home-panel .block-container.servers-status .block-title em .offline {
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+
+    background: #B74848;
+    box-shadow: 0 0 0 0 rgba(183, 72, 72, 0.5);
+}
+
+#launcher-home-panel .block-container.servers-status .server {
+    padding: 0 0 0 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 28px;
+}
+
+#launcher-home-panel .block-container.servers-status .server .server-icon {
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    background: no-repeat center;
+
+    width: 33px;
+    height: 33px;
+    background-image: url('https://cdn.discordapp.com/attachments/341689502936334347/602985834974674974/icon-discord.png');
+    background-size: 80%;
+}
+
+#launcher-home-panel .block-container.servers-status .server .server-text .big {
+    display: table;
+    margin-bottom: 1px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#launcher-home-panel .block-container.servers-status .server .server-text .small {
+    display: table;
+    font-size: 10px;
+}
+
+#launcher-home-panel .block-container.servers-status .server .server-text .small b {
+    color: #ff8400;
+}
+
+#launcher-home-panel .block-container.shop-last p {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#launcher-home-panel .block-container.shop-last a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#launcher-home-panel .block-container.shop-last .deal {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    margin: 10px 0;
+}
+#launcher-home-panel .block-container.shop-last .deal:hover {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.075);
+}
+
+#launcher-home-panel .block-container.shop-last .deal-container {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    padding: 10px;
+}
+#launcher-home-panel .block-container.shop-last .deal-img {
+    width: 50px;
+    margin-right: 10px;
+    height: auto;
+}
+#launcher-home-panel .block-container.shop-last .deal-details .deal-name {
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    color: white;
+}
+#launcher-home-panel .block-container.shop-last .deal-details .deal-price {
+    font-size: 13px;
+    font-family: 'Roboto Light';
+}
+
+/* #endregion */
+
+/** Block Play **/
+/* #region */
+
+#launcher-home-panel .block-play {
+    padding: 24px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background: rgba(255, 132, 0, 0.85);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.075);
+}
+#launcher-home-panel .block-play span {
+    position: relative;
+
+    padding-left: 6px;
+    top: 1px;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: white;
+}
+#launcher-home-panel .block-play em {
+    display: inline-block;
+
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: 0 3px 1px rgba(0, 0, 0, 0.075);
+    letter-spacing: 4px;
+    border-radius: 4px;
+    margin: 0 3px 0 5px;
+    padding: 6px 6px 6px 10px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#launcher-home-panel .block-play .button-group {
+    margin-left: auto;
+    display: block;
+}
+
+/** Block Play Button **/
+/* #region */
+
+#launcher-home-panel .block-play .button-group .btn {
+    display: inline-block;
+    margin-left: 5px;
+    height: 46px;
+    line-height: 48px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 26px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff8400;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+#launcher-home-panel .block-play .button-group .btn:hover {
+    background: white;
+    color: #ff8400;
+}
+
+/* #endregion */
+
+/* #endregion */
+
+/* #endregion */
+
+/**
+* Store panel
+**/
+
+/* #region */
+
+#launcher-store-panel .block-container.rank .rank-bg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 115px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.075) no-repeat center / cover;
+}
+
+#launcher-store-panel .block-container.rank .rank-header {
+    display: flex;
+    padding: 32px 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+#launcher-store-panel .block-container.rank .rank-header .rank-title {
+    font-size: 24px;
+    font-weight: 500;
+}
+#launcher-store-panel .block-container.rank .rank-header .rank-price {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #838383;
+}
+
+#launcher-store-panel .block-container.rank .rank-header .btn {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 9px 12px;
+    background: #777;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+#launcher-store-panel .block-container.rank .rank-perks {
+    padding: 0;
+    margin: 0 -20px -20px;
+}
+
+#launcher-store-panel .block-container.rank .perk {
+    position: relative;
+    padding: 20px 20px 20px 0px;
+    border-top: 1px solid #3a3a3a;
+}
+
+#launcher-store-panel .block-container.rank .perk .icon {
+    display: inline-block;
+    font-size: 16px;
+    color: #838383;
+
+    margin-left: 20px;
+}
+
+#launcher-store-panel .block-container.rank .perk .desc {
+    display: inline-block;
+    font-size: 13px;
+    color: #838383;
+
+    margin-left: 20px;
+}
+
+#launcher-store-panel .block-container.rank .perk.locked {
+    opacity: 0.5;
+}
+
+#launcher-store-panel .block-container.welcome .supportmail {
+    /*background: rgba(255, 255, 255, 0.15);*/
+    background: #3b3b3b;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 15px;
+    margin-top: 26px;
+}
+
+#launcher-store-panel .block-container.welcome .supportmail i {
+    color: #838383;
+    font-size: 36px;
+    margin-right: 14px;
+}
+
+#launcher-store-panel .block-container.welcome .supportmail small {
+    display: block;
+    margin-top: -1px;
+    margin-bottom: -2px;
+    color: #838383;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#launcher-store-panel .block-container.welcome .supportmail input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: #ff8400;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+#launcher-store-panel .block-container.welcome .sidebar-terms {
+    padding: 18px 22px 17px;
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* #endregion */
+
+/**
+* Beta Launcher panel
+**/
+
+/* #region */
+
+#launcher-betalauncher-panel {
+    background-image: url("http://51.77.196.230/launcher/beta-version/swinger/launcher/background.png");
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+}
+
+#launcher-betalauncher-panel .maintenance-container {
+    position: absolute;
+    display: block;
+    background: rgba(43, 43, 43, 0.9);
+    padding: 30px;
+
+    width: 70%;
+
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    border-radius: 4px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.075);
+}
+
+#launcher-betalauncher-panel .maintenance-container .title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+#launcher-betalauncher-panel .maintenance-container .desc {
+    font-size: 14px;
+    color: #959595;
+}
+
+/* #endregion */
+
+/** 
+* Maintenance panel
+**/
+
+/* #region */
+
+#launcher-maintenance-panel .maintenance-container {
+    position: absolute;
+    display: block;
+    background: #202020;
+    padding: 40px;
+
+    width: 70%;
+
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    border-radius: 4px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.075);
+}
+
+#launcher-maintenance-panel .maintenance-container .left {
+    float: left;
+    width: 80%;
+}
+
+#launcher-maintenance-panel .maintenance-container .title {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ff8326;
+}
+#launcher-maintenance-panel .maintenance-container .desc {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+#launcher-maintenance-panel .maintenance-container .button {
+    margin-top: 15px;
+}
+#launcher-maintenance-panel .maintenance-container img {
+    float: right;
+    margin-left: 20px;
+    width: auto;
+    height: 130px;
+}

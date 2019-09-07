@@ -1,0 +1,45 @@
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" http-equiv="Content-Security-Policy" content="script-src 'self'"/>
+        <title>Paladium Launcher</title>
+
+        <link type="text/css" rel="stylesheet" href="./assets/css/fonts.css">
+        <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+        
+        <link type="text/css" rel="stylesheet" href="./assets/css/bootstrap.css">
+
+        <link type="text/css" rel="stylesheet" href="./assets/css/frame.css">
+        <link type="text/css" rel="stylesheet" href="./assets/css/overlay.css">
+        
+        <link type="text/css" rel="stylesheet" href="./assets/css/login.css">
+        <link type="text/css" rel="stylesheet" href="./assets/css/promotion.css">
+        <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
+        <link type="text/css" rel="stylesheet" href="./assets/css/settings.css">
+        
+        <script src="./assets/js/scripts/swinger.js"></script>
+        <script src="./assets/js/scripts/swinginterface.js"></script>
+    </head>
+    <body>
+        <div id="main">
+            <% include login.ejs %>
+            <% include promotion.ejs %>
+            <% include launcher.ejs %>
+            <% include settings.ejs %>
+        </div>
+        
+        <% include overlay.ejs %>
+        <% include frame.ejs %>
+        
+        <div id="loading-view" style="display: none;">
+            <div class="loading-container">
+                <div class="paladium-loader"></div>
+                
+                <div class="loading-text">
+                    <p id="loading-splash-text"></p>
+                    <p class="loading-sudmitted-text">Proposé par <span id="loading-sudmitted-author"></span></p>
+                    <p id="loading-statut-text">Chargement en cours</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

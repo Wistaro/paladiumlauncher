@@ -1,0 +1,40 @@
+<div id="overlay-view" style="display: none;">
+
+    <!-- Overlay -->
+    <div id="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div class="overlay-head">
+                <h1 id="overlay-title"></h1>
+                <hr>
+            </div>
+            <div class="overlay-body">
+                <p id="overlay-desc"></p>
+                <p id="overlay-autoreload"></p>
+                <div class="button-container">
+                    <button class="button button-orange" id="overlay-button-action" style="display: none;"></button>
+                    <button class="button" id="overlay-button-close">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay : Game Update -->
+    <div id="game-update-overlay" style="display: none;">
+        <div class="overlay-content">
+            <div class="overlay-head">
+                <h1 id="game-update-overlay-title">Mise à jour</h1>
+                <hr>
+            </div>
+            <div class="overlay-body">
+                <p id="game-update-overlay-download"></p>
+
+                <div class="progress-bar">
+                    <b class="progress__bar"></b>
+                </div>
+                
+                <p id="game-update-overlay-download-percent"></p>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/scripts/overlay.js"></script>
+</div>

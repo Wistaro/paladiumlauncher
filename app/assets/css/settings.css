@@ -1,0 +1,369 @@
+/** 
+* View
+**/
+
+#settings-view {
+    position: relative;
+    height: 100%;
+    display: flex;
+}
+
+#settings-cgu-panel {
+    background-image: url('../images/settings/header.png');
+    background-repeat: no-repeat;
+}
+
+#settings-cgv-panel {
+    background-image: url('../images/settings/header.png');
+    background-repeat: no-repeat;
+}
+
+#settings-pdc-panel {
+    background-image: url('../images/settings/header.png');
+    background-repeat: no-repeat;
+}
+
+/**
+* Panels
+**/
+
+.settings-panel-left {
+    width: 30%;
+    overflow-y: auto;
+}
+
+.settings-panel-right {
+    width: 70%;
+    overflow-y: auto;
+}
+
+/** 
+* Nav
+**/
+
+.settings-container-nav {
+    background-color: #2b2b2b;
+    
+    padding: 3% 20px 20px 20px;
+    width: 340px;
+    height: 100%;
+
+    letter-spacing: 1px;
+    float: right;
+}
+
+.settings-container-nav .content {
+    margin-left: auto;
+    width: 200px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.settings-container-nav .nav-items-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.settings-container-nav .nav-items-container hr {
+    width: 90%;
+}
+
+.settings-container-nav .nav-items-container .group .title {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.settings-container-nav .nav-items-container .item {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 8px 10px;
+    width: 100%;
+    color: #838383;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.settings-container-nav .nav-items-container .item:hover {
+    background-color: rgba(59, 59, 59, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.settings-container-nav .nav-items-container .item.selected {
+    background-color: rgba(59, 59, 59);
+    color: #ffffff;
+}
+
+.settings-container-nav .nav-items-container .item.save {
+    color: rgba(11, 199, 92);
+}
+
+.settings-container-nav .nav-items-container .item.save:hover {
+    background-color: rgba(11, 199, 92, 0.1);
+    color: rgba(11, 199, 92);
+}
+
+.settings-container-nav .nav-items-container .item-social {
+    padding: 0 0 0 8px;
+    color: #838383;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.settings-container-nav .nav-items-container .item-social:hover {
+    color: #ffffff;
+}
+
+/** 
+* Settings container
+**/
+
+.settings-container {
+    padding: 3% 20px 20px 20px;
+    height: 100%;
+    width: 850px;
+    float: left;
+}
+
+.settings-container .content {
+    margin-right: auto;
+    padding: 0px 20px 20px;
+}
+
+.settings-container #title {
+    font-family: 'Roboto Light';
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/** Flex container **/
+
+.settings-flex-container {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+    width: 100%;
+}
+.settings-flex-container .textfield {
+    width: 100%;
+}
+.settings-flex-container .button {
+    font-size: 12px;
+}
+
+.settings-flex-container .group-name {
+    font-weight: 600;
+}
+.settings-flex-container .group-value {
+    color: #838383;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/** Flex double container **/
+
+.settings-flex-double-container {
+    display: flex;
+}
+.settings-flex-double-container .left-container {
+    float: left;
+    width: 50%;
+}
+.settings-flex-double-container .right-container {
+    float: right;
+    width: 50%;
+}
+
+.settings-flex-double-container .group-name {
+    font-weight: 600;
+}
+.settings-flex-double-container .group-value {
+    color: #838383;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/** Info container **/
+
+.settings-container .info-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    background-color: rgba(59, 59, 59, 0.7);
+    border-color: #202225;
+    padding: 20px;
+
+    border-radius: 5px;
+    width: 100%;
+}
+
+.settings-container .info-container .title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.settings-container .info-container .desc {
+    color: #838383;
+    font-size: 13px;
+}
+
+.settings-container .info-container .title-2 {
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.settings-container .info-container .desc-2 {
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+.settings-container .info-container a {
+    color: #bdbdbd;
+    text-decoration: underline;
+}
+
+/** Warning banner **/
+
+.warning-banner-settings {
+    background-color: rgba(250, 166, 26, 0.1);
+    border-radius: 16px;
+    color: #faa61a;
+    display: inline-block;
+    flex: 0 0 auto;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 6px 16px;
+    width: 100%;
+}
+
+/** Button settings **/
+
+.button-settings {
+    background-color: rgba(59, 59, 59);
+    color: #838383;
+    border: 0;
+}
+.button-settings:hover {
+    background-color: rgba(59, 59, 59, 0.8);
+    border: 0;
+}
+
+/** Range slider **/
+
+.range-slider {
+    width: 85%;
+}
+.range-slider-bar {
+    background: rgba(11, 199, 92);
+}
+
+/** 
+* User : Compte
+**/
+
+.user-info-container {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    background-color: rgba(59, 59, 59, 0.7);
+    padding: 20px;
+
+    border-radius: 5px;
+    width: 100%;
+}
+
+.user-profile-container {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+.user-profile {
+    position: relative;
+    background-clip: padding-box;
+    background-color: none;
+    background-position: 50%;
+    background-size: 100% 100%;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5px;
+}
+
+.user-container {
+    float: left;
+    letter-spacing: 1px;
+
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.user-container .group {
+    margin-bottom: 15px;
+}
+
+.user-container .group-name {
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.user-container .group-value {
+    color: #838383;
+    font-size: 13px;
+}
+
+.user-info-container .button.logout {
+    float: right;
+
+    font-size: 12px;
+
+    background-color: rgba(240, 71, 71, 0.05);
+    color: rgba(240, 71, 71, 0.8);
+    border: 1px solid rgba(240, 71, 71, 0.8);
+}
+
+.user-info-container .button.logout:hover {
+    background-color: rgba(240, 71, 71, 0.3);
+    border: 1px solid rgba(240, 71, 71, 1);
+}
+
+.settings-memory-range-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/** 
+* Java : Memory
+**/
+
+.settings-memory-label {
+    font-size: 14px;
+    color: #838383;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.settings-memory-info {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+}
+
+.settings-memory-info-container {
+    display: flex;
+}

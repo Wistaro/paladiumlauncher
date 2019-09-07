@@ -1,0 +1,91 @@
+#login-view {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/login/background.png');
+    background-size: cover;
+    
+    height: 100%;
+    width: 100%;
+}
+
+.login-content {
+    position: absolute;
+
+    background-color: #2b2b2b;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 600px;
+
+    letter-spacing: 1px;
+    text-align: center;
+
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.login-content .login-head {
+    padding: 30px 50px;
+}
+
+.login-content .login-head .title {
+    font-family: 'Roboto Light';
+    font-size: 24px;
+}
+
+.login-content .login-head .desc {
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.login-content .login-body {
+    padding: 0 120px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-body p {
+    margin: 7px 0;
+    font-size: 14px;
+}
+
+.login-body .textfield {
+    padding: 15px 10px;
+    width: 100%;
+
+    border-bottom: 2px solid #353535;
+}
+
+.login-body .textfield:focus {
+    border-bottom: 2px solid #ff8400;
+}
+
+.login-body button {
+    padding: 18px 40px;
+    font-size: 17px;
+}
+
+.login-body .circle-loader {
+    margin-left: 10px;
+}
+
+.login-body .forgot-password {
+    display: block;
+    font-size: 13px;
+    color: #636363;
+    margin: 20px 0;
+}
+
+.login-body .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-body .help-button {
+    position: absolute;
+    right: 0;
+    margin-top: -60px;
+    margin-right: 20px;
+}
