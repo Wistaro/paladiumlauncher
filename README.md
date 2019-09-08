@@ -48,7 +48,7 @@ Toutes les versions du launcher sont disponible dans [GitHub Releases](https://g
 **Cloner et installer les dépendances**
 
 ```console
-> git git clone https://github.com/Chaika9/paladiumlauncher.git
+> git clone https://github.com/Chaika9/paladiumlauncher.git
 > cd paladiumlauncher
 > npm install
 ```
