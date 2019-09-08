@@ -3,6 +3,8 @@
  * Copyright (C) 2019 Paladium
  */
 
+const os = require('os');
+
 const settingsMaxRAMRange = document.getElementById('settings-max-ram-range');
 const settingsMaxRAMLabel = document.getElementById('settings-max-ram-label');
 const settingsMinRAMRange = document.getElementById('settings-min-ram-range');

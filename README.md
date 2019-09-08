@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/build-dev-red.svg?style=for-the-badge" alt="build">
-    <img src="https://img.shields.io/badge/version-v0.0.01--d5-red.svg?style=for-the-badge" alt="version"> 
+    <img src="https://img.shields.io/badge/version-v0.0.01--d7-red.svg?style=for-the-badge" alt="version"> 
     <img src="https://img.shields.io/badge/dist-windows-blue.svg?style=for-the-badge" alt="distribution">
 </p>
 
@@ -24,10 +24,10 @@ Toutes les nouveautés concernant les builds du launcher se font ici!
 Toutes les versions du launcher sont disponible dans [GitHub Releases](https://github.com/Chaika9/paladiumlauncher/releases)
 
 #### Dernière Release
-[![](https://img.shields.io/badge/release-v0.0.01--d5-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
+[![](https://img.shields.io/badge/release-v0.0.01--d7-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
 
 #### Dernière Pre-Release
-[![](https://img.shields.io/badge/release-v0.0.01--d5-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
+[![](https://img.shields.io/badge/release-v0.0.01--d7-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
 
 **Plateformes supportées**
 
@@ -48,7 +48,7 @@ Toutes les versions du launcher sont disponible dans [GitHub Releases](https://g
 **Cloner et installer les dépendances**
 
 ```console
-> git git clone https://github.com/Chaika9/paladiumlauncher.git
+> git clone https://github.com/Chaika9/paladiumlauncher.git
 > cd paladiumlauncher
 > npm install
 ```

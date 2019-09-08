@@ -47,7 +47,7 @@ let gameAssetEx;
 function gameUpdate() {
     let proc;
     let isValideDistro = false;
-
+    
     const loggerGameAssetEx = LoggerUtil('%c[AssetManagerEx]', 'color: #000668; font-weight: bold');
     loggerGameAssetEx.log('Initialization..');
 

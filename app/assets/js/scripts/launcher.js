@@ -3,6 +3,8 @@
  * Copyright (C) 2019 Paladium
  */
 
+const ProcessBuilder = require('./assets/js/processbuilder');
+
 let currentLauncherPanel;
 
 const LAUNCHER_PANELS = {

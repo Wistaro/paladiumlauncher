@@ -203,6 +203,17 @@ class JavaManager extends EventEmitter {
         });
         return retArr
     }
+
+    static _scanJavaHome() {
+        const jHome = process.env.JAVA_HOME;
+        try {
+            let res = fs.existsSync(jHome);
+            return res ? jHome : null;
+        } 
+        catch (err) {
+            return null
+        }
+    }
 }
 
 class AssetManager extends EventEmitter {
@@ -789,9 +800,19 @@ class AssetManager extends EventEmitter {
     }
 
     async _win32JavaValidate(workingDir) {
-        const pathSet = await JavaManager._scanFileSystem(path.join(workingDir, 'runtime', 'x64'));
-        let pathArr = await this._validateJavaRootSet(pathSet);
+        const pathSet1 = await JavaManager._scanFileSystem('C:\\Program Files\\Java');
+        const pathSet2 = await JavaManager._scanFileSystem(path.join(workingDir, 'runtime', 'x64'));
 
+        const homeSet = new Set([...pathSet1, ...pathSet2]);
+
+        // Validate JAVA_HOME.
+        const jHome = JavaManager._scanJavaHome();
+        if(jHome != null && jHome.indexOf('(x86)') === -1) {
+            homeSet.add(jHome);
+        }
+
+        let pathArr = await this._validateJavaRootSet(homeSet);
+        
         if(pathArr.length > 0) {
             return pathArr[0].execPath;
         } 

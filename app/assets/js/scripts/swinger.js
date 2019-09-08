@@ -11,7 +11,7 @@ const path = require('path');
 
 const isDev = require('./assets/js/isdev');
 const LoggerUtil = require('./assets/js/loggerutil');
-const {Library} = require('./assets/js/assetmanager');
+const { Library, AssetManager } = require('./assets/js/assetmanager');
 const ConfigManager = require('./assets/js/configmanager');
 const DistroManager = require('./assets/js/distromanager');
 const AuthManager = require('./assets/js/authmanager');
@@ -20,7 +20,7 @@ const loggerLauncher = LoggerUtil('%c[Launcher]', 'color: #000668; font-weight: 
 const loggerSwinger = LoggerUtil('%c[Swinger]', 'color: #000668; font-weight: bold');
 const loggerAutoUpdater = LoggerUtil('%c[AutoUpdater]', 'color: #209b07; font-weight: bold');
 
-const launcherVersion = "0.0.01-d6";
+const launcherVersion = "0.0.01-d7";
 
 loggerLauncher.log('Paladium Launcher (v' + launcherVersion + ") started on " + Library.mojangFriendlyOS() + "..");
 
@@ -36,7 +36,9 @@ window.eval = global.eval = function () {
 
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
-    // TODO : Ajouter un message d'avertissement
+    console.log('%cConsole', 'color: #ff8326; font-size: 30px; font-weight: bold');
+    console.log('%cBienvenue sur la console !', 'font-size: 16px');
+    console.log('%cSi tu fais une capture d\'écran ou un copier-coller pour de l\'aide (support-launcher), fait attention à masquer certaines informations qui s\'affiche ici !', 'font-size: 16px');
 });
 
 // Disable zoom, needed for darwin.
@@ -272,6 +274,25 @@ function onDistroLoad(data) {
 function onAutoUpdateFinish() {
     setLoadingStatut("Vérification de l'environnement Java");
 
+    const jExe = ConfigManager.getJavaExecutable();
+    if(jExe == null) {
+        downloadJava();
+    }
+    else {
+        const jm = new AssetManager();
+        jm._validateJavaBinary(jExe).then((v) => {
+            loggerLauncher.log('Java version meta', v);
+            if(v.valid) {
+                onValidateJava();
+            } 
+            else {
+                downloadJava();
+            }
+        });
+    }
+}
+
+function downloadJava() {
     const loggerJavaAssetEx = LoggerUtil('%c[JavaManagerEx]', 'color: #353232; font-weight: bold');
 
     let javaAssetEx = cp.fork(path.join(__dirname, 'assets', 'js', 'assetmanagerexec.js'), [
@@ -384,7 +405,7 @@ async function validateSelectedAccount() {
 // #region
 
 document.addEventListener('keydown', function (e) {
-    if(isDev && (e.key === 'I' || e.key === 'i') && e.ctrlKey && e.shiftKey) {
+    if((e.key === 'I' || e.key === 'i') && e.ctrlKey && e.shiftKey) {
         let window = remote.getCurrentWindow();
         window.toggleDevTools({mode:'undocked'});
     }
