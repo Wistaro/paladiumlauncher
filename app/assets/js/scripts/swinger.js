@@ -11,7 +11,7 @@ const path = require('path');
 
 const isDev = require('./assets/js/isdev');
 const LoggerUtil = require('./assets/js/loggerutil');
-const {Library} = require('./assets/js/assetmanager');
+const { Library, AssetManager } = require('./assets/js/assetmanager');
 const ConfigManager = require('./assets/js/configmanager');
 const DistroManager = require('./assets/js/distromanager');
 const AuthManager = require('./assets/js/authmanager');
@@ -272,7 +272,28 @@ function onDistroLoad(data) {
 function onAutoUpdateFinish() {
     setLoadingStatut("Vérification de l'environnement Java");
 
+    const jExe = ConfigManager.getJavaExecutable();
+    if(jExe == null) {
+        downloadJava();
+    }
+    else {
+        const jm = new AssetManager();
+        jm._validateJavaBinary(jExe).then((v) => {
+            loggerLauncher.log('Java version meta', v);
+            if(v.valid) {
+                onValidateJava();
+            } 
+            else {
+                downloadJava();
+            }
+        });
+    }
+}
+
+function downloadJava() {
     const loggerJavaAssetEx = LoggerUtil('%c[JavaManagerEx]', 'color: #353232; font-weight: bold');
+
+    console.log("Download JAVA");
 
     let javaAssetEx = cp.fork(path.join(__dirname, 'assets', 'js', 'assetmanagerexec.js'), [
         'AssetManager',
