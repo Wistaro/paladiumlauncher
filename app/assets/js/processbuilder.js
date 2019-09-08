@@ -32,14 +32,16 @@ class ProcessBuilder {
 
     _getFiles(dir, files_) {
         files_ = files_ || [];
-        var files = fs.readdirSync(dir);
-        for(var i in files) {
-            var name = dir + '/' + files[i];
-            if(fs.statSync(name).isDirectory()) {
-                this._getFiles(name, files_);
-            } 
-            else {
-                files_.push(name);
+        if(fs.existsSync(dir)) {
+            var files = fs.readdirSync(dir);
+            for(var i in files) {
+                var name = dir + '/' + files[i];
+                if(fs.statSync(name).isDirectory()) {
+                    this._getFiles(name, files_);
+                } 
+                else {
+                    files_.push(name);
+                }
             }
         }
         return files_;
@@ -87,7 +89,7 @@ class ProcessBuilder {
         for(let inst of instances) {
             for(let mdl of inst.getModules()) {
                 files.push(mdl.getArtifact().getPath());
-
+                
                 if(mdl.hasSubModules()) {
                     for(let sm of mdl.getSubModules()) {
                         files.push(sm.getArtifact().getPath(), '/');
