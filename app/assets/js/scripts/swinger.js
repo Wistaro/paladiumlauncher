@@ -36,7 +36,9 @@ window.eval = global.eval = function () {
 
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
-    // TODO : Ajouter un message d'avertissement
+    console.log('%cConsole', 'color: #ff8326; font-size: 30px; font-weight: bold');
+    console.log('%cBienvenue sur la console !', 'font-size: 16px');
+    console.log('%cSi tu fais une capture d\'écran ou un copier-coller pour de l\'aide (support-launcher), fait attention à masquer certaines informations qui s\'affiche ici !', 'font-size: 16px');
 });
 
 // Disable zoom, needed for darwin.
@@ -293,8 +295,6 @@ function onAutoUpdateFinish() {
 function downloadJava() {
     const loggerJavaAssetEx = LoggerUtil('%c[JavaManagerEx]', 'color: #353232; font-weight: bold');
 
-    console.log("Download JAVA");
-
     let javaAssetEx = cp.fork(path.join(__dirname, 'assets', 'js', 'assetmanagerexec.js'), [
         'AssetManager',
         ConfigManager.getCommonDirectory(),
@@ -405,7 +405,7 @@ async function validateSelectedAccount() {
 // #region
 
 document.addEventListener('keydown', function (e) {
-    if(isDev && (e.key === 'I' || e.key === 'i') && e.ctrlKey && e.shiftKey) {
+    if((e.key === 'I' || e.key === 'i') && e.ctrlKey && e.shiftKey) {
         let window = remote.getCurrentWindow();
         window.toggleDevTools({mode:'undocked'});
     }

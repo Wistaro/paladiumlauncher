@@ -71,6 +71,10 @@ class ProcessBuilder {
             files.push(path.join(this.gameDir, ign.path));
         }
 
+        for(let file of this._getFiles(path.join(this.gameDir, "config"))) {
+            files.push(file);
+        }
+
         for(let file of this._getFiles(path.join(this.gameDir, "resourcepacks"))) {
             files.push(file);
         }
