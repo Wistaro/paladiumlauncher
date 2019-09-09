@@ -15,6 +15,7 @@
                 </div>
                 <div class="group">
                     <p class="title">Paramètres Launcher</p>
+                    <button class="item settingsTab" id="settings-launcher-config-panel-button" rSc="settings-launcher-config-panel">Paramètres</button>
                     <button class="item settingsTab" id="settings-launcher-distribution-panel-button" rSc="settings-launcher-distribution-panel">Distribution</button>
                     <hr>
                 </div>
@@ -45,6 +46,9 @@
 
         <!-- Java : Executable -->
         <% include settings/java-executable.ejs %>
+
+        <!-- Launcher : Config -->
+        <% include settings/launcher-config.ejs %>
 
         <!-- Launcher : Distribution -->
         <% include settings/launcher-distribution.ejs %>
