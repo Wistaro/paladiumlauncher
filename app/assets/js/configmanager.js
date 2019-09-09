@@ -52,6 +52,14 @@ const DEFAULT_CONFIG = {
             maxRAM: resolveMaxRAM(),
             executable: null,
             jvmOptions: [
+                '-Djava.awt.headless=true',
+                '-Dfile.encoding=UTF-8',
+                '-XX:NewSize=256m',
+                '-XX:MaxNewSize=256m',
+                '-XX:PermSize=256m',
+                '-XX:MaxPermSize=256m',
+                '-XX:+DisableExplicitGC', // TODO : Test new args java
+
                 '-XX:+UseConcMarkSweepGC',
                 '-XX:+CMSIncrementalMode',
                 '-XX:-UseAdaptiveSizePolicy',
