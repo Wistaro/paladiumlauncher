@@ -96,14 +96,35 @@ function setGameUpdateOverlayDownload(text) {
     document.getElementById('game-update-overlay-download').innerHTML = text;
 }
 
-function setGameUpdateOverlayDownloadProgress(percent) {
+var overlayDownloadProgress = $('.progress__bar');
+
+function setGameUpdateOverlayDownloadProgress(percent, color = 'blue') {
     document.getElementById('game-update-overlay-download-percent').innerHTML = percent + "%";
 
     let p = parseFloat(percent.toFixed(1));
     if(p >= 100) {
         p = 100;
     }
-    $('.progress__bar').css({ width: p + "%" });
+
+    overlayDownloadProgress.removeClass("progress__bar--green")
+    .removeClass("progress__bar--yellow")
+    .removeClass("progress__bar--orange")
+    .removeClass("progress__bar--blue");
+
+    if(color == 'orange') {
+        overlayDownloadProgress.addClass("progress__bar--orange");
+    }
+    else if(color == 'yellow') {
+        overlayDownloadProgress.addClass("progress__bar--yellow");
+    }
+    else if(color == 'green') {
+        overlayDownloadProgress.addClass("progress__bar--green");
+    }
+    else if(color == 'blue') {
+        overlayDownloadProgress.addClass("progress__bar--blue");
+    }
+
+    overlayDownloadProgress.css({ width: p + "%" });
 }
 
 // #endregion

@@ -20,7 +20,7 @@ const loggerLauncher = LoggerUtil('%c[Launcher]', 'color: #000668; font-weight: 
 const loggerSwinger = LoggerUtil('%c[Swinger]', 'color: #000668; font-weight: bold');
 const loggerAutoUpdater = LoggerUtil('%c[AutoUpdater]', 'color: #209b07; font-weight: bold');
 
-const launcherVersion = "0.0.01-d7";
+const launcherVersion = "0.0.01-d8";
 
 loggerLauncher.log('Paladium Launcher (v' + launcherVersion + ") started on " + Library.mojangFriendlyOS() + "..");
 
@@ -66,7 +66,18 @@ function initSwinger() {
 
 document.addEventListener('readystatechange', function() {
     if(document.readyState === 'complete') {
-        initLauncher();
+        if(process.platform != 'win32') { // TODO : Phase Beta (Only Windows)
+            setOverlayContent('Système d\'exploitation non pris en charge',
+            'Pendant la phase de beta du launcher, seul Windows est pris en charge.',
+            'Fermer le launcher');
+            toggleOverlay(true);
+            setCloseHandler(() => {
+                closeLauncher();
+            });
+        }
+        else {
+            initLauncher();
+        }
     }
 }, false);
 

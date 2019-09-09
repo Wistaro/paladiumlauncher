@@ -13,6 +13,9 @@ $("#launcher-home-options-button").click(function() {
 });
 
 $("#launcher-home-play-button").click(function() {
+    /*setGameUpdateOverlayContent();
+    setGameTaskProgress();
+    setGameUpdateOverlayDownloadProgress(50, 'green');*/
     gameUpdate();
 });
 
@@ -52,12 +55,10 @@ function gameUpdate() {
     loggerGameAssetEx.log('Initialization..');
 
     setGameUpdateOverlayContent();
-    toggleGameUpdateOverlay(true);
-
+    setGameTaskProgress();
+    
     setGameUpdateOverlayDownloadProgress(0);
     setGameUpdateOverlayDownload("Recherche de mise à jour..");
-
-    $(VIEWS.launcher).fadeOut(1000);
 
     gameAssetEx = cp.fork(path.join(__dirname, 'assets', 'js', 'assetmanagerexec.js'), [
         'AssetManager',
@@ -184,19 +185,56 @@ function gameUpdate() {
                         gameUpdate();
                     });
                 }
-
                 return;
             }
+
             setGameUpdateOverlayDownload("Lancement du jeu en cours..");
+            setGameUpdateOverlayDownloadProgress(0, 'yellow');
 
             const tempListener = function(data) {
-                if(data.trim().match(/Initializing LWJGL OpenAL/i)) {
+                if(data.trim().match(/Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker/i)) {
+                    setGameUpdateOverlayDownload("Chargement de Forge en cours..");
+                    setGameUpdateOverlayDownloadProgress(10, 'yellow');
+                }
+                else if(data.trim().match(/Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker/i)) {
+                    setGameUpdateOverlayDownloadProgress(20, 'yellow');
+                }
+                else if(data.trim().match(/Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker/i)) {
+                    setGameUpdateOverlayDownloadProgress(30, 'yellow');
+                }
+                else if(data.trim().match(/Forge Mod Loader version/i)) {
+                    setGameUpdateOverlayDownloadProgress(40, 'yellow');
+                }
+                else if(data.trim().match(/Launching wrapped minecraft/i)) {
+                    setGameUpdateOverlayDownload("Chargement de Minecraft en cours..");
+                    setGameUpdateOverlayDownloadProgress(50, 'yellow');
+                }
+                else if(data.trim().match(/Attempting early MinecraftForge initialization/i)) {
+                    setGameUpdateOverlayDownload("Chargement des Mods..");
+                    setGameUpdateOverlayDownloadProgress(60, 'green');
+                }
+                else if(data.trim().match(/Entering preinitialization phase../i)) {
+                    setGameUpdateOverlayDownload("Chargement des Mods (1/3)..");
+                    setGameUpdateOverlayDownloadProgress(70, 'green');
+                }
+                else if(data.trim().match(/Entering initialization phase../i)) {
+                    setGameUpdateOverlayDownload("Chargement des Mods (2/3)..");
+                    setGameUpdateOverlayDownloadProgress(80, 'green');
+                }
+                else if(data.trim().match(/Entering postinitialization phase../i)) {
+                    setGameUpdateOverlayDownload("Chargement des Mods (3/3)..");
+                    setGameUpdateOverlayDownloadProgress(90, 'green');
+                }
+                else if(data.trim().match(/Created: 1024x512 textures/i)) {
+                    setGameUpdateOverlayDownload("Chargement en cours..");
+                    setGameUpdateOverlayDownloadProgress(100, 'green');
+
                     proc.stdout.on('data', gameStateChange);
                     proc.stdout.removeListener('data', tempListener);
                     proc.stderr.removeListener('data', gameErrorListener);
-
-                    $(VIEWS.launcher).fadeIn(1000);
-                    toggleGameUpdateOverlay(false);
+                    
+                    const window = remote.getCurrentWindow();
+                    window.hide();
                 }
             }
             
@@ -204,7 +242,7 @@ function gameUpdate() {
                 // TODO : Ajouter d'autre event d'erreur.
 
                 data = data.trim();
-                if(data.trim().match(/Error in class 'LibraryLWJGLOpenAL'/i)) {
+                /*if(data.trim().match(/Error in class 'LibraryLWJGLOpenAL'/i)) {
                     proc.kill();
 
                     setOverlayContent('Erreur de lancement',
@@ -218,7 +256,7 @@ function gameUpdate() {
                         toggleOverlay(false);
                         gameUpdate();
                     });
-                }
+                }*/
             }
 
             const gameErrorListener = function(data) {
@@ -228,9 +266,22 @@ function gameUpdate() {
                 if(data.indexOf('Could not find or load main class net.minecraft.launchwrapper.Launch') > -1) {
                     console.error('Game launch failed, LaunchWrapper was not downloaded properly.');
                 }
+            }
+
+            const gameCloseListener = function(code, signal) {
+                const window = remote.getCurrentWindow();
+                window.show();
+                window.focus();
+
+                setGameTaskProgress(false);
                 
-                $(VIEWS.launcher).fadeIn(1000);
-                toggleGameUpdateOverlay(false);
+                if(code != 0) {
+                    setOverlayContent('Crash du jeu 😭',
+                        'Une erreur s\'est produite pendant l\'exécution du jeu.', 
+                        'Fermer');
+                    toggleOverlay(true);
+                    setCloseHandler();
+                }
             }
 
             forgeData = m.result.forgeData;
@@ -247,19 +298,12 @@ function gameUpdate() {
                 proc.stdout.on('data', tempListener);
                 proc.stderr.on('data', gameErrorListener);
 
-                proc.on('close', (code, signal) => {
-                    $("#launcher-home-play-button").attr("disabled", false);
-                });
-
-                $("#launcher-home-play-button").attr("disabled", true);
+                proc.on('close', gameCloseListener);
             } 
             catch(err) {
                 console.error('Error during launch', err);
 
-                $(VIEWS.launcher).fadeIn(1000);
-                toggleGameUpdateOverlay(false);
-
-                $("#launcher-home-play-button").attr("disabled", false);
+                setGameTaskProgress(false);
             }
 
             gameAssetEx.disconnect();
@@ -267,6 +311,19 @@ function gameUpdate() {
     });
 
     gameAssetEx.send({task: 'execute', function: 'validateEverything', argsArr: [ConfigManager.getSelectedInstance()]});
+}
+
+function setGameTaskProgress(value = true) {
+    if(value) {
+        toggleGameUpdateOverlay(true);
+        $(VIEWS.launcher).fadeOut(1000);
+        $("#launcher-home-play-button").attr("disabled", true);
+    }
+    else {
+        $(VIEWS.launcher).fadeIn(1000);
+        toggleGameUpdateOverlay(false);
+        $("#launcher-home-play-button").attr("disabled", false);
+    }
 }
 
 function setDownloadPercentage(value, max, percent = ((value / max) * 100)) {
