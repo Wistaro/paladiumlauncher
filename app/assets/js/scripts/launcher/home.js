@@ -21,9 +21,9 @@ $("#launcher-home-play-button").click(function() {
 
 document.addEventListener('keydown', (e) => {
     if(getCurrentView() === VIEWS.launcher && currentLauncherPanel === LAUNCHER_PANELS.home) {
-        if(e.key === 'Enter') {
-            // TODO : Ajout de l'event key (ENTER) pour lancer le jeu.
-            // gameUpdate();
+        var isPlayButtonEnabled = !($('#launcher-home-play-button').attr("disabled") === "disabled");  
+        if(e.key === 'Enter' && isPlayButtonEnabled) {
+             gameUpdate();
         }
     }
 });
