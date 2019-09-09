@@ -1,14 +1,21 @@
 <div class="settings-container" id="settings-java-executable-panel" style="display: none;">
-    <h1 id="title">Java éxécutable</h1>
+    <h1 id="title">Java exécutable</h1>
 
     <div class="info-container">
         <p class="title">Information</p>
-        <p class="desc">Cette page permet d'indiquer à Paladium l'emplacement de l'exécutable Java.
+        <p class="desc">Cette page permet d'indiquer à Paladium l'emplacement de l'exécutable Java.<br /><br />
+            Par défaut, le launcher utilise une version embarquée de Java <i>(Java 8 update 51)</i>.  
             <% if(process.platform === 'win32') { %>
-                <br><br>Celui-ci se trouve très souvent à cet emplacement:
-                <br>C:\Program Files\Java\jre1.8.0_XXX\bin (avec XXX le numéro du build de la version, prenez le plus grand que vous avez.)
-                <br><br>Deux versions de l’exécutable sont disponible dans ce répertoire: java.exe ou javaw.exe. Leur fonctionnement est quasi-identique. java.exe présente l'avantage d'écrire les logs pendant l’exécution du jeu, tandis que javaw.exe se contente de lancer le jeu.
-                <br>Par défaut, utilisez javaw.exe, sauf si vous avez besoin de faire du débogage.
+            Celle-ci est disponible dans le répertoire %appdata%/.paladium/runtime.<br /><br />
+            Toutefois, vous pouvez spécifier votre propre exécutable, si vous avez déjà Java 8 d'installé sur votre ordinateur.
+                <br>Celui-ci se trouve très souvent à cet emplacement:
+                <br>C:\Program Files\Java\jre1.8.0_XXX\bin <i>(avec XXX le numéro du build de la version, prenez le plus grand que vous avez.)</i>
+                <br><br>Deux versions de l’exécutable sont disponible dans ce répertoire: <br />
+                - java.exe<br />
+                - javaw.exe<br /><br />
+                
+                 Leur fonctionnement est quasi-identique. Java.exe présente l'avantage d'écrire les logs pendant l’exécution du jeu, tandis que javaw.exe se contente de lancer le jeu.
+                <br>Par défaut, utilisez javaw.exe, sauf si vous avez besoin de faire du débogage avec la console du launcher..
             <% } %>
         </p>
     </div>
