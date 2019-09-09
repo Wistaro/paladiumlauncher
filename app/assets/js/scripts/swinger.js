@@ -351,7 +351,6 @@ function downloadJava() {
             switch(m.data) {
                 case 'download': {
                     setLoadingStatut("Extraction en cours");
-                    console.log('Finish download java!');
                     break;
                 }
                 case 'java': {
