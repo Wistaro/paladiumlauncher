@@ -42,6 +42,7 @@ Toutes les versions du launcher sont disponible dans [GitHub Releases](https://g
 **Configuration requise**
 
 * [Node.js][nodejs] v10.x.x
+* [Git][git]
 
 ---
 
@@ -95,3 +96,4 @@ Build pour une plateforme spécifique :
 Copyright 2019 Paladium. All rights reserved.
 
 [nodejs]: https://nodejs.org/en/ 'Node.js'
+[git]: https://git-scm.com/ 'Git'
