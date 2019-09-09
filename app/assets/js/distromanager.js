@@ -325,7 +325,7 @@ exports.pullRemote = async function(distroURL) {
     return new Promise((resolve, reject) => {
         let opts = {
             url: distroURL,
-            timeout: 2500
+            timeout: 10000
         }
         request(opts, (error, resp, body) => {
             if(!error) {
