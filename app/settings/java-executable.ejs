@@ -4,12 +4,12 @@
     <div class="info-container">
         <p class="title">Information</p>
         <p class="desc">Cette page permet d'indiquer à Paladium l'emplacement de l'exécutable Java.<br /><br />
-            Par défaut, le launcher utilise une version embarquée de Java <i>(Java 8 update 51)</i>.  
+            Le launcher utilise une version embarquée de Java <i>(Java 8 update 51)</i>, si celui-ci n'est pas déjà installé sur votre ordinateur.  
             <% if(process.platform === 'win32') { %>
-            Celle-ci est disponible dans le répertoire %appdata%/.paladium/runtime.<br /><br />
-            Toutefois, vous pouvez spécifier votre propre exécutable, si vous avez déjà Java 8 d'installé sur votre ordinateur.
+            Cette version est disponible dans le répertoire %appdata%/.paladium/runtime.<br /><br />
+            Toutefois, vous pouvez spécifier votre propre exécutable.
                 <br>Celui-ci se trouve très souvent à cet emplacement:
-                <br>C:\Program Files\Java\jre1.8.0_XXX\bin <i>(avec XXX le numéro du build de la version, prenez le plus grand que vous avez.)</i>
+                <br>C:\Program Files\Java\jre1.8.0_XXX\bin <i>(avec XXX le numéro du build de la version)</i>
                 <br><br>Deux versions de l’exécutable sont disponible dans ce répertoire: <br />
                 - java.exe<br />
                 - javaw.exe<br /><br />
