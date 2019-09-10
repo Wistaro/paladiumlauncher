@@ -3,6 +3,8 @@
  * Copyright (C) 2019 Paladium
  */
 
+const $launcherHomePlayButton = $('#launcher-home-play-button');
+
 function initLauncherHomePanel() {
     refreshServer();
 }
@@ -12,18 +14,14 @@ $("#launcher-home-options-button").click(function() {
     initSettings();
 });
 
-$("#launcher-home-play-button").click(function() {
-    /*setGameUpdateOverlayContent();
-    setGameTaskProgress();
-    setGameUpdateOverlayDownloadProgress(50, 'green');*/
+$launcherHomePlayButton.click(function() {
     gameUpdate();
 });
 
 document.addEventListener('keydown', (e) => {
     if(getCurrentView() === VIEWS.launcher && currentLauncherPanel === LAUNCHER_PANELS.home) {
-        if(e.key === 'Enter') {
-            // TODO : Ajout de l'event key (ENTER) pour lancer le jeu.
-            // gameUpdate();
+        if(e.key === 'Enter' && $launcherHomePlayButton.attr("disabled") != "disabled") {
+             gameUpdate();
         }
     }
 });

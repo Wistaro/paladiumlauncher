@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/build-dev-red.svg?style=for-the-badge" alt="build">
-    <img src="https://img.shields.io/badge/version-v0.0.01--d8-red.svg?style=for-the-badge" alt="version"> 
+    <img src="https://img.shields.io/badge/version-v0.0.01--d9-red.svg?style=for-the-badge" alt="version"> 
     <img src="https://img.shields.io/badge/dist-windows-blue.svg?style=for-the-badge" alt="distribution">
 </p>
 
@@ -24,10 +24,10 @@ Toutes les nouveautés concernant les builds du launcher se font ici!
 Toutes les versions du launcher sont disponible dans [GitHub Releases](https://github.com/Chaika9/paladiumlauncher/releases)
 
 #### Dernière Release
-[![](https://img.shields.io/badge/release-v0.0.01--d8-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
+[![](https://img.shields.io/badge/release-v0.0.01--d9-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
 
 #### Dernière Pre-Release
-[![](https://img.shields.io/badge/release-v0.0.01--d8-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
+[![](https://img.shields.io/badge/release-v0.0.01--d9-red.svg?style=for-the-badge)](https://github.com/Chaika9/paladiumlauncher/releases/latest)
 
 **Plateformes supportées**
 
@@ -42,6 +42,7 @@ Toutes les versions du launcher sont disponible dans [GitHub Releases](https://g
 **Configuration requise**
 
 * [Node.js][nodejs] v10.x.x
+* [Git][git]
 
 ---
 
@@ -95,3 +96,4 @@ Build pour une plateforme spécifique :
 Copyright 2019 Paladium. All rights reserved.
 
 [nodejs]: https://nodejs.org/en/ 'Node.js'
+[git]: https://git-scm.com/ 'Git'

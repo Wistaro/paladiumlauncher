@@ -157,7 +157,7 @@ class ProcessBuilder {
             args.push('-Xdock:name=PaladiumLauncher');
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'));
         }
-
+        
         args.push('-Xmx' + ConfigManager.getMaxRAM());
         args.push('-Xms' + ConfigManager.getMinRAM());
         args = args.concat(ConfigManager.getJVMOptions());

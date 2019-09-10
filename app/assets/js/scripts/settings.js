@@ -60,19 +60,19 @@ setupSettingsTabs();
 $("#settings-save-button").click(function() {
     let maxRam = Number(settingsMaxRAMRange.getAttribute('value'));
     if(maxRam % 1 > 0) {
-        maxRam = maxRam * 1000 + 'M';
+        maxRam = Math.round(maxRam * 1000) + 'M';
     } 
     else {
-        maxRam = maxRam + 'G';
+        maxRam = Math.round(maxRam) + 'G';
     }
     ConfigManager.setMaxRAM(maxRam);
 
     let minRam = Number(settingsMinRAMRange.getAttribute('value'));
     if(minRam % 1 > 0) {
-        minRam = minRam * 1000 + 'M';
+        minRam = Math.round(minRam * 1000) + 'M';
     } 
     else {
-        minRam = minRam + 'G';
+        minRam = Math.round(minRam) + 'G';
     }
     ConfigManager.setMinRAM(minRam);
 
