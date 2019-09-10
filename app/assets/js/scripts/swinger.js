@@ -20,7 +20,7 @@ const loggerLauncher = LoggerUtil('%c[Launcher]', 'color: #000668; font-weight: 
 const loggerSwinger = LoggerUtil('%c[Swinger]', 'color: #000668; font-weight: bold');
 const loggerAutoUpdater = LoggerUtil('%c[AutoUpdater]', 'color: #209b07; font-weight: bold');
 
-const launcherVersion = "0.0.01-d8";
+const launcherVersion = "0.0.01-d9";
 
 loggerLauncher.log('Paladium Launcher (v' + launcherVersion + ") started on " + Library.mojangFriendlyOS() + "..");
 
@@ -351,7 +351,6 @@ function downloadJava() {
             switch(m.data) {
                 case 'download': {
                     setLoadingStatut("Extraction en cours");
-                    console.log('Finish download java!');
                     break;
                 }
                 case 'java': {
