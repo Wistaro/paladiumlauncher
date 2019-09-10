@@ -395,6 +395,63 @@ button {
 /* #endregion */
 
 /** 
+* CheckBox
+**/
+
+/* #region */
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+}
+.checkbox + label {
+    position: relative;
+    cursor: pointer;
+    color: #838383;
+    padding: 0;
+}
+.checkbox + label:before {
+    content: '';
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 14px;
+    height: 14px;
+    background: #3b3b3b;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    opacity: 0.5;
+}
+.checkbox:checked + label:before {
+    background: rgba(11, 199, 92);
+}
+.checkbox:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+}
+.checkbox:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+}
+.checkbox:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+}
+.checkbox:hover + label:before {
+    opacity: 1;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+
+/* #endregion */
+
+/** 
 * Loader 
 **/
 
