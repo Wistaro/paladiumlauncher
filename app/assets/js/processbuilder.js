@@ -98,11 +98,11 @@ class ProcessBuilder {
             }
         }
 
-        /*for(let file of files_ex) {
+        for(let file of files_ex) {
             if(!this._checkFile(file, files)) {
                 fs.unlinkSync(file);
             }
-        }*/
+        }
 
         logger.log("Build..");
         fs.ensureDirSync(this.gameDir);
