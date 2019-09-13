@@ -36,6 +36,7 @@ function initSettings(tab = 'settings-user-compte-panel') {
     initSettingsJavaMemoryTab();
     initSettingsJavaExecutableTab();
     initSettingsLauncherDistroTab();
+    initSettingsGameDirectoryTab();
 
     var navItems = $(".selected");
     if(navItems.hasClass('settingsTab')) {

@@ -3,7 +3,7 @@
 
     <div class="info-container">
         <p class="title">Information</p>
-        <p class="desc">~~ C'est pour bientôt ! 💜</p>
+        <p class="desc">Cette page permet de configurer le fonctionnement du launcher.</p>
     </div>
 
     <div class="settings-flex-container">
@@ -23,6 +23,11 @@
         </div>
 
         <p class="group-name mt-20">Répertoire du jeu</p>
-        <input class="textfield mt-10" type="text" />
+        <input class="textfield mt-10" type="text" id="gameDirectory" disabled/>
+        <input class="button-select" id="settings-game-directory-select">
+        <label class="button button-settings" for="settings-game-directory-select">Ouvrir</label>
     </div>
+
+    <script src="./assets/js/scripts/settings/launcher-config.js"></script>
+
 </div>
