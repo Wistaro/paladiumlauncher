@@ -3,13 +3,14 @@
  * Copyright (C) 2019 Paladium
  */
 
- const $initSettingsGameDirectoryField = $('#gameDirectory')
- const $initSettingsGameDirectorySelect = $('#settings-game-directory-select');
+ const $initSettingsLauncherConfigGameDirectoryTextField = $('#settings-launcher-config-gamedirectory-textfield')
+ const $initSettingsLauncherConfigGameDirectoryOpenButton = $('#settings-launcher-config-gamedirectory-open-button');
+ const $initSettingsLauncherConfigGameDirectoryEditButton = $('#settings-launcher-config-gamedirectory-edit-button');
 
- function initSettingsGameDirectoryTab() {
-    $initSettingsGameDirectoryField.val(ConfigManager.getWorkingDirectory());
+ function initSettingsLauncherConfigTab() {
+    $initSettingsLauncherConfigGameDirectoryTextField.val(ConfigManager.getWorkingDirectory());
 }
 
-$($initSettingsGameDirectorySelect).click( function() {
-    shell.openExternal($initSettingsGameDirectoryField.val());
+$($initSettingsLauncherConfigGameDirectoryOpenButton).click(function() {
+    shell.openExternal($initSettingsLauncherConfigGameDirectoryTextField.val());
 });
