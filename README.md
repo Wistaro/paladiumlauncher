@@ -37,6 +37,16 @@ Toutes les versions du launcher sont disponible dans [GitHub Releases](https://g
 | macOS | `non disponible (en cours)` |
 | Linux x64 | `non disponible (en cours)` |
 
+## Contribution
+
+Le launcher de Paladium est un projet Open-Source, initié par Chaika, développeur sur Paladium.  
+Par conséquent, il est ouvert aux contributions externes.  
+Toutefois, si vous souhaitez contribuer, vous devez **impérativement** rejoindre le serveur Discord de développement: https://discord.gg/nug6yB7  
+  
+Plus d'informations sont disponibles sur ce serveur, dans le channel #devenir-contributeur.
+
+**Toute contribution provenant d'une personne n'ayant pas rejoint le serveur Discord sera automatiquement refusée.**
+
 ## Développement
 
 **Configuration requise**
