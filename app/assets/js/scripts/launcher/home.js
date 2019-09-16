@@ -142,8 +142,8 @@ function gameUpdate() {
         else if(m.context === 'error') {
             toggleGameUpdateOverlay(false);
 
-            setOverlayContent('Mise à jour échoué 😭',
-                'Une erreur c\'est produite lors de la mise à jour du jeu.'
+            setOverlayContent('Mise à jour échouée 😭',
+                'Une erreur s\'est produite lors de la mise à jour du jeu.'
                 + '<br>Nous vous conseillons de réessayer la mise à jour avec le bouton ci-dessous.', 
                 'Annuler', 'Réessayer');
             toggleOverlay(true);
@@ -162,8 +162,8 @@ function gameUpdate() {
                 toggleGameUpdateOverlay(false);
 
                 if(ConfigManager.getDistroCustom() == 'true') {
-                    setOverlayContent('Mise à jour échoué 😭',
-                        'Une erreur c\'est produite lors de la récupération des distributions.'
+                    setOverlayContent('Mise à jour échouée 😭',
+                        'Une erreur s\'est produite lors de la récupération des distributions.'
                         + '<br><i class="fas fa-angle-right"></i> Nous vous conseillons de vérifier l\'url de distribution dans les options du launcher.', 
                         'Annuler');
                     toggleOverlay(true);
@@ -171,8 +171,8 @@ function gameUpdate() {
                     setCloseHandler();
                 }
                 else {
-                    setOverlayContent('Mise à jour échoué 😭',
-                        'Une erreur c\'est produite lors de la mise à jour du jeu.'
+                    setOverlayContent('Mise à jour échouée 😭',
+                        'Une erreur s\'est produite lors de la mise à jour du jeu.'
                         + '<br><i class="fas fa-angle-right"></i> Nous vous conseillons de réessayer la mise à jour avec le bouton ci-dessous.', 
                         'Annuler', 'Réessayer');
                     toggleOverlay(true);
@@ -187,6 +187,8 @@ function gameUpdate() {
             }
 
             setGameUpdateOverlayDownload("Lancement du jeu en cours..");
+            setGameUpdateOverlayTitle("Lancement du jeu");
+
             setGameUpdateOverlayDownloadProgress(0, 'yellow');
 
             const tempListener = function(data) {
