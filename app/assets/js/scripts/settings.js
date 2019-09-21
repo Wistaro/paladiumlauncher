@@ -37,6 +37,7 @@ function initSettings(tab = 'settings-user-compte-panel') {
     initSettingsJavaExecutableTab();
     initSettingsLauncherDistroTab();
     initSettingsLauncherConfigTab();
+    initSettingsLauncherOptionsTab();
 
     var navItems = $(".selected");
     if(navItems.hasClass('settingsTab')) {

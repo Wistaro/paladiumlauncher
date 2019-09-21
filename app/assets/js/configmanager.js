@@ -45,7 +45,8 @@ const DEFAULT_CONFIG = {
     settings: {
         launcher: {
             distroCustom: 'false',
-            distroURL: null
+            distroURL: null, 
+            keepLauncherOpen : 'false'
         },
         java: {
             minRAM: resolveMinRAM(),
@@ -282,4 +283,12 @@ exports.getJVMOptions = function(def = false) {
 
 exports.setJVMOptions = function(jvmOptions) {
     config.settings.java.jvmOptions = jvmOptions;
+}
+
+exports.getLauncherConfigKeepOpen = function(){
+    return config.settings.launcher.keepLauncherOpen;
+}
+
+exports.setLauncherConfigKeepOpen = function(isLauncherStayOpen){
+    config.settings.launcher.keepLauncherOpen = isLauncherStayOpen;
 }
